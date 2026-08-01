@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohand&Shahd Wedding Invetation</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      height:100vh;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:
+      linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+      url("background.jpg");
+      background-size:cover;
+      background-position:center;
+      font-family:'Gulzar',serif;
+      position:relative;
+    }
+
+    /* ================= FLOATING ICONS ================= */
+
+    .floating-icons{
+      position:absolute;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      overflow:hidden;
+      pointer-events:none;
+    }
+
+    .floating-icons span{
+      position:absolute;
+      bottom:-100px;
+      color:rgba(255,255,255,0.25);
+      font-size:24px;
+      animation:float 15s linear infinite;
+    }
+
+    .floating-icons span:nth-child(1){
+      left:10%;
+      animation-duration:12s;
+    }
+
+    .floating-icons span:nth-child(2){
+      left:25%;
+      animation-duration:18s;
+    }
+
+    .floating-icons span:nth-child(3){
+      left:45%;
+      animation-duration:14s;
+    }
+
+    .floating-icons span:nth-child(4){
+      left:65%;
+      animation-duration:20s;
+    }
+
+    .floating-icons span:nth-child(5){
+      left:85%;
+      animation-duration:16s;
+    }
+
+    /* ================= CONTAINER ================= */
+
+    .container{
+      text-align:center;
+      z-index:2;
+      animation:fadeIn 1.5s ease;
+    }
+
+    .title{
+        color:#fff;
+        font-family:'Gulzar',serif;
+        font-size:24px;
+        letter-spacing:5px;
+        margin-bottom:45px;
+        text-shadow:0 0 15px rgba(0,0,0,0.4);
+    }
+
+    /* ================= ENVELOPE ================= */
+
+.envelope-wrapper{
+  position:relative;
+  width:340px;
+  height:220px;
+  cursor:pointer;
+  transition:0.5s;
+  perspective:1000px;
+}
+
+.envelope-wrapper:hover{
+  transform:scale(1.03);
+}
+
+.envelope{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+/* Main Envelope */
+
+.base{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:#d8bea2;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* Left Fold */
+
+.left{
+  position:absolute;
+  width:50%;
+  height:100%;
+  background:#c9aa88;
+  clip-path:polygon(0 0, 100% 50%, 0 100%);
+  left:0;
+  top:0;
+}
+
+/* Right Fold */
+
+.right{
+  position:absolute;
+  width:50%;
+  height:100%;
+  background:#b89470;
+  clip-path:polygon(100% 0, 0 50%, 100% 100%);
+  right:0;
+  top:0;
+}
+
+/* Bottom Fold */
+
+.bottom{
+  position:absolute;
+  width:100%;
+  height:55%;
+  background:#d2b08d;
+  bottom:0;
+  clip-path:polygon(0 100%, 50% 0, 100% 100%);
+}
+
+/* Top Flap */
+
+.flap{
+  position:absolute;
+  width:100%;
+  height:55%;
+  background:#c49a74;
+  top:0;
+  left:0;
+  clip-path:polygon(0 0, 50% 100%, 100% 0);
+  transform-origin:top;
+  transition:0.8s ease;
+  z-index:5;
+}
+
+/* Open Animation */
+
+.open .flap{
+  transform:rotateX(180deg);
+}
+
+/* Glow */
+
+.envelope-wrapper::after{
+  content:"";
+  position:absolute;
+  width:120%;
+  height:120%;
+  top:-10%;
+  left:-10%;
+  border-radius:20px;
+  background:rgba(255,255,255,0.03);
+  filter:blur(40px);
+  z-index:-1;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+  .envelope-wrapper{
+    width:280px;
+    height:190px;
+  }
+
+}
+
+    
+
+    /* ================= ANIMATIONS ================= */
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+      }
+
+      10%{
+        opacity:1;
+      }
+
+      100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+      }
+
+    }
+
+    @keyframes fadeIn{
+
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:768px){
+
+      .envelope-wrapper{
+        width:280px;
+        height:190px;
+      }
+
+      .title{
+        font-size:18px;
+        letter-spacing:3px;
+      }
+
+    }
+  .hidden {
+      opacity: 0;
+      transform: translateY(80px);
+      transition: all 1.2s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    .lang-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+
+      width: 110px;
+      height: 46px;
+
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 50px;
+      background: rgba(255, 255, 255, .15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 15px;
+
+      cursor: pointer;
+      overflow: hidden;
+
+      transition: .35s ease;
+    }
+
+    .lang-toggle:hover {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, .18);
+    }
+
+    .lang {
+      position: relative;
+      z-index: 2;
+
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+
+      color: white;
+      user-select: none;
+    }
+
+ .toggle-slider{
+    position: absolute;
+    left: 4px;
+    top: 4px;
+
+    width: 48px;
+    height: 38px;
+
+    border-radius: 40px;
+
+    background: rgba(255,255,255,.95);
+
+    transition: .35s ease;
+}
+
+    .ar {
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="lang-toggle" onclick="changeLanguage()">
+    <div class="toggle-slider"></div>
+    <span class="lang en">EN</span>
+    <span class="lang ar">Ar</span>
+</button>
+
+  <!-- Floating Icons -->
+
+  <div class="floating-icons">
+
+    <span>❀</span>
+    <span>❤</span>
+    <span>❀</span>
+    <span>❤</span>
+    <span>❀</span>
+
+  </div>
+
+  <!-- Main Content -->
+
+  <div class="container">
+
+    <div class="title">
+      Open The Invitation
+    </div>
+
+    <!-- ================= ENVELOPE ================= -->
+
+<div class="envelope-wrapper" id="envelope">
+
+  <div class="envelope">
+
+    <div class="base"></div>
+
+    <div class="left"></div>
+
+    <div class="right"></div>
+
+    <div class="bottom"></div>
+
+    <div class="flap"></div>
+
+  </div>
+
+</div>
+
+  </div>
+
+  <!-- Script -->
+
+  <script>
+
+    const envelope = document.getElementById("envelope");
+
+    envelope.addEventListener("click", () => {
+
+      envelope.classList.add("open");
+
+      setTimeout(() => {
+
+        window.location.href = "main.html";
+
+      }, 850);
+
+    });
+
+    function changeLanguage(){
+    window.location.href="index_ar.html";
+}
+
+  </script>
+
+</body>
+</html>

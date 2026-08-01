@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohand&Shahd Wedding Invetation</title>
+
+  <!-- Elegant Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #F8F4EE;
+      color: #7A5C45;
+      overflow-x: hidden;
+      font-family: 'Cinzel', serif;
+      position: relative;
+    }
+
+    /* ================= FLOATING ICONS ================= */
+
+    .floating-icons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .floating-icons span {
+      position: absolute;
+      bottom: -50px;
+      font-size: 28px;
+      opacity: 0.15;
+      animation: floatIcons linear infinite;
+    }
+
+    /* Countdown Colors */
+
+    .countdown-icons span {
+      color: #B08968;
+    }
+
+    /* Message Colors */
+
+    .message-icons span {
+      color: #C8B6A6;
+    }
+
+    /* Animation */
+
+    @keyframes floatIcons {
+
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.18;
+      }
+
+      50% {
+        opacity: 0.28;
+      }
+
+      100% {
+        transform: translateY(-120vh) rotate(360deg) scale(1.2);
+        opacity: 0;
+      }
+
+    }
+
+    /* ================= GENERAL ================= */
+
+    section {
+      width: 100%;
+      padding: 100px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 52px;
+      margin-bottom: 25px;
+      color: #8B6B52;
+      font-weight: 500;
+      letter-spacing: 2px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),
+        url("background.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(139, 107, 82, 0.15);
+      border-radius: 50%;
+      animation: pulse 6s infinite;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 60px 40px;
+      border: 1px solid rgba(139, 107, 82, 0.15);
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(8px);
+      animation: fadeUp 2s ease;
+      max-width: 750px;
+      border-radius: 25px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero h1 {
+      font-family: 'Allura', cursive;
+      font-size: 100px;
+      color: #7A5C45;
+      font-weight: 400;
+      animation: glow 3s infinite alternate;
+    }
+
+    .hero p {
+      margin-top: 15px;
+      font-size: 24px;
+      letter-spacing: 4px;
+      color: #A67C52;
+    }
+
+    .date {
+      margin-top: 35px;
+      font-size: 26px;
+      line-height: 2;
+      color: #8B6B52;
+    }
+
+    /* ================= COUNTDOWN ================= */
+
+    .countdown {
+      background: #F5EFE6;
+      text-align: center;
+      color: #7A5C45;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .h3 {
+      color: #7A5C45;
+    }
+
+    .countdown-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+
+    .box {
+      width: 180px;
+      padding: 35px 20px;
+      border-radius: 25px;
+      background: #FFFFFF;
+      border: 1px solid rgba(139, 107, 82, 0.1);
+      transition: 0.5s;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .box::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+      top: -100%;
+      left: -100%;
+      transition: 0.6s;
+    }
+
+    .box:hover::before {
+      top: 100%;
+      left: 100%;
+    }
+
+    .box:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 0 30px rgba(176, 137, 104, 0.2);
+    }
+
+    .box h3 {
+      font-size: 58px;
+      color: #A67C52;
+      margin-bottom: 10px;
+    }
+
+    .box span {
+      font-size: 18px;
+      letter-spacing: 3px;
+      color: #8B6B52;
+    }
+
+    /* ================= LOCATION ================= */
+
+    .location {
+      text-align: center;
+      background: #FFFDF9;
+    }
+
+    .h2 {
+      color: #7A5C45;
+    }
+
+    .location-text {
+      color: #A67C52;
+      font-size: 26px;
+      line-height: 2;
+      margin-bottom: 40px;
+    }
+
+    .map {
+      max-width: 950px;
+      margin: auto;
+      border-radius: 25px;
+      overflow: hidden;
+      border: 1px solid rgba(139, 107, 82, 0.1);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+      transition: 0.5s;
+    }
+
+    .map:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 40px rgba(176, 137, 104, 0.18);
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+    }
+
+    /* ================= MESSAGE ================= */
+
+    .message {
+      background: #F2E8DC;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .message-content {
+      max-width: 850px;
+      margin: auto;
+      font-size: 30px;
+      line-height: 2;
+      color: #8B6B52;
+      animation: fadeUp 2s ease;
+    }
+
+    .signature {
+      margin-top: 45px;
+      font-family: 'Allura', cursive;
+      font-size: 60px;
+      color: #7A5C45;
+
+      letter-spacing: 4px;
+    }
+
+    .countdown h2 {
+      font-size: 36px;
+    }
+
+    /* ================= ANIMATIONS ================= */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px rgba(176, 137, 104, 0.2);
+      }
+
+      to {
+        text-shadow: 0 0 25px rgba(176, 137, 104, 0.5);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+        opacity: 0.25;
+      }
+
+      50% {
+        transform: scale(1);
+        opacity: 0.08;
+      }
+
+      100% {
+        transform: scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:768px) {
+
+      section {
+        padding: 80px 18px;
+      }
+
+      .h2 {
+        font-size: 38px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        letter-spacing: 2px;
+      }
+
+      .date {
+        font-size: 20px;
+      }
+
+      .hero-content {
+        padding: 40px 25px;
+      }
+
+      .box {
+        width: 140px;
+        padding: 25px 15px;
+      }
+
+      .box h3 {
+        font-size: 42px;
+      }
+
+      .box span {
+        font-size: 15px;
+      }
+
+      .location-text {
+        font-size: 20px;
+      }
+
+      iframe {
+        height: 300px;
+      }
+
+
+      .message-content {
+        font-size: 22px;
+        line-height: 1.8;
+      }
+
+      .signature {
+        font-size: 45px;
+      }
+
+      .countdown h2 {
+        font-size: 24px;
+      }
+
+    }
+    
+      .venue-section {
+        width: 100%;
+        padding: 90px 20px 60px;
+
+        background: #d8c9b4;
+
+        text-align: center;
+      }
+
+      .venue-title {
+        font-family: 'Great Vibes', cursive;
+        font-size: 64px;
+
+        color: #2a080f;
+
+        font-weight: 400;
+
+        margin-bottom: 70px;
+      }
+
+      .venue-image {
+        width: 100%;
+        max-width: 700px;
+
+        margin: auto;
+      }
+
+      .venue-image img {
+        width: 100%;
+        display: block;
+      }
+
+      .venue-text {
+        margin-top: 60px;
+
+        font-family: 'Cinzel Decorative', serif;
+
+        font-size: 30px;
+
+        color: #2a080f;
+      }
+
+      .venue-date {
+        margin-top: 12px;
+
+        font-family: 'Great Vibes', cursive;
+
+        font-size: 28px;
+
+        color: #2a080f;
+      }
+
+      .map-btn {
+        display: inline-flex;
+
+        justify-content: center;
+        align-items: center;
+
+        width: 260px;
+        height: 90px;
+
+        margin-top: 70px;
+
+        border: 2px solid #2a080f;
+
+        text-decoration: none;
+
+        color: #6e6648;
+
+        font-family: 'Cinzel Decorative', serif;
+
+        font-size: 28px;
+
+        transition: .35s;
+        border-radius: 25%;
+      }
+
+      .map-btn:hover {
+        background: #6e6648;
+
+        color: #d8c9b4;
+
+        border-color: #2a080f;
+      }
+
+      .divider {
+        width: 100%;
+
+        margin-top: 90px;
+
+        display: flex;
+
+        justify-content: center;
+
+        position: relative;
+      }
+
+      .divider::before {
+        content: "";
+
+        position: absolute;
+
+        width: 100%;
+        height: 1px;
+
+        background: rgba(42, 8, 15, .35);
+
+        top: 50%;
+      }
+
+      .ornament {
+        position: relative;
+
+        display: flex;
+
+        background: #d8c9b4;
+
+        padding: 0 18px;
+      }
+
+      .ornament span {
+        width: 12px;
+        height: 12px;
+
+        border: 2px solid rgba(42, 8, 15, .55);
+
+        transform: rotate(45deg);
+
+        margin-left: -2px;
+      }
+
+    /* ================= SCROLL ANIMATION ================= */
+
+    .hidden {
+      opacity: 0;
+      transform: translateY(80px);
+      transition: all 1.2s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    .lang-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+
+      width: 110px;
+      height: 46px;
+
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 50px;
+      background: rgba(255, 255, 255, .15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 15px;
+
+      cursor: pointer;
+      overflow: hidden;
+
+      transition: .35s ease;
+    }
+
+    .lang-toggle:hover {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, .18);
+    }
+
+    .lang {
+      position: relative;
+      z-index: 2;
+
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+
+      color: white;
+      user-select: none;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      left: 4px;
+      top: 4px;
+
+      width: 48px;
+      height: 38px;
+
+      border-radius: 40px;
+
+      background: rgba(255, 255, 255, .95);
+
+      transition: .35s ease;
+    }
+
+    .ar {
+      color: #222;
+    }
+  </style>
+</head>
+
+<body>
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="lang-toggle" onclick="changeLanguage()">
+    <div class="toggle-slider"></div>
+    <span class="lang en">EN</span>
+    <span class="lang ar">Ar</span>
+  </button>
+
+
+  <!-- ================= HERO SECTION ================= -->
+
+  <section class="hero hidden">
+
+    <div class="hero-content">
+
+      <h1>Mohanad & Shahd</h1>
+
+      <p>TOGETHER WITH THEIR FAMILIES</p>
+
+      <div class="date">
+        Friday • September 18, 2026 <br>
+        8:00 PM
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= COUNTDOWN ================= -->
+
+  <section class="countdown hidden">
+    <div class="floating-icons countdown-icons">
+
+      <span style="left:8%; animation-duration:12s;">❤</span>
+      <span style="left:20%; animation-duration:18s;">❀</span>
+      <span style="left:35%; animation-duration:14s;">❤</span>
+      <span style="left:50%; animation-duration:20s;">❀</span>
+      <span style="left:65%; animation-duration:15s;">❤</span>
+      <span style="left:80%; animation-duration:17s;">❀</span>
+
+    </div>
+
+    <h2 class="h3">Countdown To Our Forever</h2>
+
+    <div class="countdown-container">
+
+      <div class="box">
+        <h3 id="days">00</h3>
+        <span>DAYS</span>
+      </div>
+
+      <div class="box">
+        <h3 id="hours">00</h3>
+        <span>HOURS</span>
+      </div>
+
+      <div class="box">
+        <h3 id="minutes">00</h3>
+        <span>MINUTES</span>
+      </div>
+
+      <div class="box">
+        <h3 id="seconds">00</h3>
+        <span>SECONDS</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= LOCATION ================= -->
+  <!-- 
+  <section class="location hidden">
+
+    <h2 class="h2">Wedding Venue</h2>
+
+    <div class="location-text">
+      Le Roi Hall - Air Force House, Salah Salem - Nasr City <br>
+    </div>
+
+    <div class="map">
+
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.4013565795317!2d31.321703600000003!3d30.0826897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f87f5d77679%3A0xfbb12cfa21648a0c!2sAir%20Force%20House!5e0!3m2!1sen!2seg!4v1785575649448!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+    </div>
+
+  </section> -->
+  <section class="venue-section">
+
+
+    <h2 class="venue-title">
+      Venue
+    </h2>
+
+    <div class="venue-image">
+
+      <img src="venue.png" alt="Venue">
+
+    </div>
+
+    <p class="venue-text">
+      We would be delighted to celebrate this unforgettable evening with you.
+    </p>
+
+    <p class="venue-text">
+          Le Roi Hall - Air Force House, <br>
+<br>
+      Salah Salem - Nasr City </p>
+    <a href="https://maps.app.goo.gl/CBNZAj1veYCjQqtFA" target="_blank" class="map-btn">
+
+      Google Maps
+
+    </a>
+
+    <div class="divider">
+
+      <span class="ornament">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MESSAGE ================= -->
+
+  <section class="message hidden">
+    <div class="floating-icons message-icons">
+
+      <span style="left:10%; animation-duration:14s;">❀</span>
+      <span style="left:25%; animation-duration:20s;">❤</span>
+      <span style="left:40%; animation-duration:16s;">❀</span>
+      <span style="left:60%; animation-duration:18s;">❤</span>
+      <span style="left:78%; animation-duration:13s;">❀</span>
+      <span style="left:90%; animation-duration:19s;">❤</span>
+
+    </div>
+
+    <h2 class="h2">Invitation</h2>
+
+    <div class="message-content">
+
+      With hearts full of love and joy, <br>
+      we invite you to celebrate our special day.
+      <br><br>
+
+      Your presence will make this beautiful occasion
+      even more meaningful and unforgettable.
+      <br><br>
+
+      Join us for an elegant evening filled with love,
+      laughter, happiness, and forever memories.
+
+      <div class="signature">
+        Mohanad & Shahd
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= COUNTDOWN SCRIPT ================= -->
+
+  <script>
+
+    const weddingDate = new Date("September 18, 2026 20:00:00").getTime();
+    const countdown = setInterval(function () {
+
+      const now = new Date().getTime();
+
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+
+      if (distance < 0) {
+        clearInterval(countdown);
+      }
+
+    }, 1000);
+
+  </script>
+  <script>
+
+    const sections = document.querySelectorAll('.hidden');
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+
+      });
+
+    }, {
+      threshold: 0.2
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    function changeLanguage() {
+      window.location.href = "main_ar.html";
+    }
+
+  </script>
+
+</body>
+
+</html>
