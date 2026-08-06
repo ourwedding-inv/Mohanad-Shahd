@@ -1,838 +1,354 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>دعوة زفاف مهند و شهد</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>دعوة زفاف مهند وشهد | رحلة MS-2026</title>
 
-  <!-- Elegant Fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Gulzar&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #F8F4EE;
-      color: #7A5C45;
-      overflow-x: hidden;
-      font-family: 'Gulzar', serif;
-      position: relative;
-    }
-
-    /* ================= FLOATING ICONS ================= */
-
-    .floating-icons {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .floating-icons span {
-      position: absolute;
-      bottom: -50px;
-      font-size: 28px;
-      opacity: 0.15;
-      animation: floatIcons linear infinite;
-    }
-
-    /* Countdown Colors */
-
-    .countdown-icons span {
-      color: #B08968;
-    }
-
-    /* Message Colors */
-
-    .message-icons span {
-      color: #C8B6A6;
-    }
-
-    /* Animation */
-
-    @keyframes floatIcons {
-
-      0% {
-        transform: translateY(0) rotate(0deg) scale(0.8);
-        opacity: 0;
-      }
-
-      10% {
-        opacity: 0.18;
-      }
-
-      50% {
-        opacity: 0.28;
-      }
-
-      100% {
-        transform: translateY(-120vh) rotate(360deg) scale(1.2);
-        opacity: 0;
-      }
-
-    }
-
-    /* ================= GENERAL ================= */
-
-    section {
-      width: 100%;
-      padding: 100px 20px;
-      position: relative;
-      z-index: 2;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 52px;
-      margin-bottom: 25px;
-      color: #8B6B52;
-      font-weight: 500;
-      letter-spacing: 2px;
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      height: 100vh;
-      background:
-        linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),
-        url("background.jpg");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border: 1px solid rgba(139, 107, 82, 0.15);
-      border-radius: 50%;
-      animation: pulse 6s infinite;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 60px 40px;
-      border: 1px solid rgba(139, 107, 82, 0.15);
-      background: rgba(255, 255, 255, 0.45);
-      backdrop-filter: blur(8px);
-      animation: fadeUp 2s ease;
-      max-width: 750px;
-      border-radius: 25px;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
-    }
-
-    .hero h1 {
-      font-family: 'Gulzar', serif;
-      font-size: 100px;
-      color: #7A5C45;
-      font-weight: 400;
-      animation: glow 3s infinite alternate;
-    }
-
-    .hero p {
-      margin-top: 15px;
-      font-size: 24px;
-      letter-spacing: 4px;
-      color: #A67C52;
-    }
-
-    .date {
-      margin-top: 35px;
-      font-size: 26px;
-      line-height: 2;
-      color: #8B6B52;
-    }
-
-    /* ================= COUNTDOWN ================= */
-
-    .countdown {
-      background: #F5EFE6;
-      text-align: center;
-      color: #7A5C45;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .h3 {
-      color: #7A5C45;
-    }
-
-    .countdown-container {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-      margin-top: 50px;
-    }
-
-    .box {
-      width: 180px;
-      padding: 35px 20px;
-      border-radius: 25px;
-      background: #FFFFFF;
-      border: 1px solid rgba(139, 107, 82, 0.1);
-      transition: 0.5s;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-    }
-
-    .box::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-      top: -100%;
-      left: -100%;
-      transition: 0.6s;
-    }
-
-    .box:hover::before {
-      top: 100%;
-      left: 100%;
-    }
-
-    .box:hover {
-      transform: translateY(-12px) scale(1.03);
-      box-shadow: 0 0 30px rgba(176, 137, 104, 0.2);
-    }
-
-    .box h3 {
-      font-size: 58px;
-      color: #A67C52;
-      margin-bottom: 10px;
-    }
-
-    .box span {
-      font-size: 18px;
-      letter-spacing: 3px;
-      color: #8B6B52;
-    }
-
-    /* ================= LOCATION ================= */
-
-    .location {
-      text-align: center;
-      background: #FFFDF9;
-    }
-
-    .h2 {
-      color: #7A5C45;
-    }
-
-    .location-text {
-      color: #A67C52;
-      font-size: 26px;
-      line-height: 2;
-      margin-bottom: 40px;
-    }
-
-    .map {
-      max-width: 950px;
-      margin: auto;
-      border-radius: 25px;
-      overflow: hidden;
-      border: 1px solid rgba(139, 107, 82, 0.1);
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
-      transition: 0.5s;
-    }
-
-    .map:hover {
-      transform: scale(1.01);
-      box-shadow: 0 0 40px rgba(176, 137, 104, 0.18);
-    }
-
-    iframe {
-      width: 100%;
-      height: 450px;
-      border: 0;
-    }
-
-    /* ================= MESSAGE ================= */
-
-    .message {
-      background: #F2E8DC;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .message-content {
-      max-width: 850px;
-      margin: auto;
-      font-size: 30px;
-      line-height: 2;
-      color: #8B6B52;
-      animation: fadeUp 2s ease;
-    }
-
-    .signature {
-      margin-top: 45px;
-      font-family: 'Gulzar', serif;
-      font-size: 60px;
-      color: #7A5C45;
-
-      letter-spacing: 4px;
-    }
-
-    .countdown h2 {
-      font-size: 36px;
-    }
-
-    /* ================= ANIMATIONS ================= */
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px rgba(176, 137, 104, 0.2);
-      }
-
-      to {
-        text-shadow: 0 0 25px rgba(176, 137, 104, 0.5);
-      }
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(0.9);
-        opacity: 0.25;
-      }
-
-      50% {
-        transform: scale(1);
-        opacity: 0.08;
-      }
-
-      100% {
-        transform: scale(1.1);
-        opacity: 0;
-      }
-    }
-
-    /* ================= MOBILE ================= */
-
-    @media(max-width:768px) {
-
-      section {
-        padding: 80px 18px;
-      }
-
-      .h2 {
-        font-size: 38px;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero p {
-        font-size: 18px;
-        letter-spacing: 2px;
-      }
-
-      .date {
-        font-size: 20px;
-      }
-
-      .hero-content {
-        padding: 40px 25px;
-      }
-
-      .box {
-        width: 140px;
-        padding: 25px 15px;
-      }
-
-      .box h3 {
-        font-size: 42px;
-      }
-
-      .box span {
-        font-size: 15px;
-      }
-
-      .location-text {
-        font-size: 20px;
-      }
-
-      iframe {
-        height: 300px;
-      }
-
-      .message-content {
-        font-size: 22px;
-        line-height: 1.8;
-      }
-
-      .signature {
-        font-size: 45px;
-      }
-
-      .countdown h2 {
-        font-size: 24px;
-      }
-
-    }
-
-    .venue-section {
-      width: 100%;
-      padding: 90px 20px 60px;
-
-      background: #d8c9b4;
-
-      text-align: center;
-    }
-
-    .venue-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 64px;
-
-      color: #2a080f;
-
-      font-weight: 400;
-
-      margin-bottom: 70px;
-    }
-
-    .venue-image {
-      width: 100%;
-      max-width: 700px;
-
-      margin: auto;
-    }
-
-    .venue-image img {
-      width: 100%;
-      display: block;
-    }
-
-    .venue-text {
-      margin-top: 60px;
-
-      font-family: 'Cinzel Decorative', serif;
-
-      font-size: 30px;
-
-      color: #2a080f;
-    }
-
-    .venue-date {
-      margin-top: 12px;
-
-      font-family: 'Great Vibes', cursive;
-
-      font-size: 28px;
-
-      color: #2a080f;
-    }
-
-    .map-btn {
-      display: inline-flex;
-
-      justify-content: center;
-      align-items: center;
-
-      width: 260px;
-      height: 90px;
-
-      margin-top: 70px;
-
-      border: 2px solid #2a080f;
-
-      text-decoration: none;
-
-      color: #6e6648;
-
-      font-family: 'Cinzel Decorative', serif;
-
-      font-size: 28px;
-
-      transition: .35s;
-      border-radius: 25%;
-    }
-
-    .map-btn:hover {
-      background: #6e6648;
-
-      color: #d8c9b4;
-
-      border-color: #2a080f;
-    }
-
-    .divider {
-      width: 100%;
-
-      margin-top: 90px;
-
-      display: flex;
-
-      justify-content: center;
-
-      position: relative;
-    }
-
-    .divider::before {
-      content: "";
-
-      position: absolute;
-
-      width: 100%;
-      height: 1px;
-
-      background: rgba(42, 8, 15, .35);
-
-      top: 50%;
-    }
-
-    .ornament {
-      position: relative;
-
-      display: flex;
-
-      background: #d8c9b4;
-
-      padding: 0 18px;
-    }
-
-    .ornament span {
-      width: 12px;
-      height: 12px;
-
-      border: 2px solid rgba(42, 8, 15, .55);
-
-      transform: rotate(45deg);
-
-      margin-left: -2px;
-    }
-
-    /* ================= SCROLL ANIMATION ================= */
-
-    .hidden {
-      opacity: 0;
-      transform: translateY(80px);
-      transition: all 1.2s ease;
-    }
-
-    .show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
-    .lang-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
-
-      width: 110px;
-      height: 46px;
-
-      border: 1px solid rgba(255, 255, 255, .35);
-      border-radius: 50px;
-      background: rgba(255, 255, 255, .15);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 0 15px;
-
-      cursor: pointer;
-      overflow: hidden;
-
-      transition: .35s ease;
-    }
-
-    .lang-toggle:hover {
-      box-shadow: 0 8px 25px rgba(0, 0, 0, .18);
-    }
-
-    .lang {
-      position: relative;
-      z-index: 2;
-
-      font-size: 14px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-
-      color: white;
-      user-select: none;
-    }
-
-    .toggle-slider {
-      position: absolute;
-      left: 4px;
-      top: 4px;
-
-      width: 48px;
-      height: 38px;
-
-      border-radius: 40px;
-
-      background: rgba(255, 255, 255, .95);
-
-      transition: .35s ease;
-    }
-
-    .ar {
-      color: #222;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+<body class="rtl">
 
-<body>
-  <audio autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
-
-  <button class="lang-toggle" onclick="changeLanguage()">
-    <div class="toggle-slider"></div>
-    <span class="lang en">EN</span>
-    <span class="lang ar">Ar</span>
+  <!-- Language Switcher -->
+  <button class="lang-toggle" onclick="changeLanguage('main.html')" aria-label="Switch to English">
+    <div class="toggle-slider ar-pos"></div>
+    <span class="lang EN">EN</span>
+    <span class="lang AR active">عربي</span>
   </button>
 
-
-  <!-- ================= HERO SECTION ================= -->
-
-  <section class="hero hidden">
-
-    <div class="hero-content">
-
-      <h1>مهند & شهد</h1>
-
-      <p>يتشرفان بدعوتكم لحضور حفل زفافهما برفقة عائلتيهما</p>
-
-      <div class="date">
-        الجمعة ١٨ سبتمبر ٢٠٢٦ <br>
-        ٧:٠٠ مساءً
-      </div>
+  <!-- Background Music Player Button -->
+  <button class="music-toggle" id="musicBtn" data-off-text="تشغيل الموسيقى" data-on-text="الموسيقى تعمل">
+    <div class="equalizer">
+      <span></span><span></span><span></span>
     </div>
+    <span class="music-status">تشغيل الموسيقى</span>
+  </button>
 
-  </section>
-
-  <!-- ================= COUNTDOWN ================= -->
-
-  <section class="countdown hidden">
-    <div class="floating-icons countdown-icons">
-
-      <span style="left:8%; animation-duration:12s;">❤</span>
-      <span style="left:20%; animation-duration:18s;">❀</span>
-      <span style="left:35%; animation-duration:14s;">❤</span>
-      <span style="left:50%; animation-duration:20s;">❀</span>
-      <span style="left:65%; animation-duration:15s;">❤</span>
-      <span style="left:80%; animation-duration:17s;">❀</span>
-
-    </div>
-
-    <h2 class="h3">العد التنازلي لموعد لقائنا</h2>
-
-    <div class="countdown-container">
-
-      <div class="box">
-        <h3 id="days">00</h3>
-        <span>أيام</span>
-      </div>
-
-      <div class="box">
-        <h3 id="hours">00</h3>
-        <span>ساعات</span>
-      </div>
-
-      <div class="box">
-        <h3 id="minutes">00</h3>
-        <span>دقائق</span>
-      </div>
-
-      <div class="box">
-        <h3 id="seconds">00</h3>
-        <span>ثوانٍ</span>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ================= LOCATION ================= -->
-
-  <!-- <section class="location hidden">
-
-    <h2 class="h2">مكان الحفل</h2>
-
-    <div class="location-text">
-      قاعة لوروا - دار القوات الجوية صلاح سالم
-      - مدينة نصر <br>
-    </div>
-
-    <div class="map">
-
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.4013565795317!2d31.321703600000003!3d30.0826897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f87f5d77679%3A0xfbb12cfa21648a0c!2sAir%20Force%20House!5e0!3m2!1sen!2seg!4v1785575649448!5m2!1sen!2seg"
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </div>
-
-  </section> -->
-
-  <section class="venue-section">
-
-
-    <h2 class="venue-title">
-      مكان الحفل </h2>
-
-    <div class="venue-image">
-
-      <img src="venue.png" alt="Venue">
-
-    </div>
-
-    <p class="venue-text">
-      يسعدنا أن نحتفل معكم بهذه الأمسية التي لا تُنسى. </p>
-
-    <p class="venue-text">
-      قاعة لوروا - دار القوات الجوية <br>
-      <br>
-      صلاح سالم
-      - مدينة نصر
-    </p>
-    <a href="https://maps.app.goo.gl/CBNZAj1veYCjQqtFA" target="_blank" class="map-btn">
-
-      خرائط جوجل
+  <!-- Navigation Header Back to Launch Screen -->
+  <div class="header-nav">
+    <a href="index_ar.html" class="btn-back">
+      → شاشة الانطلاق
     </a>
+  </div>
 
-    <div class="divider">
+  <!-- MAIN INVITATION CONTENT -->
+  <main>
+    <!-- SECTION 1: BOARDING PASS HERO -->
+    <section class="inv-section">
+      <div class="boarding-pass-card">
+        <div class="pass-header">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <span style="font-size:24px;">✈</span>
+            <div>
+              <span style="font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#F2C14E; display:block;">خطوط الحب الجوية • إلى الأبد معاً</span>
+              <h2 style="font-size:20px; font-weight:700;">تذكرة الدرجة الأولى • رحلة العمر</h2>
+            </div>
+          </div>
+          <div style="font-family:monospace; font-size:12px; background:rgba(0,0,0,0.25); padding:6px 14px; border-radius:20px; border:1px solid rgba(255,255,255,0.2);">
+            رقم الرحلة: <strong style="color:#FFF;">MS-091826</strong> | درجة المقعد: <strong style="color:#F2C14E;">كبار الشخصيات VIP</strong>
+          </div>
+        </div>
 
-      <span class="ornament">
+        <div class="pass-body">
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            <div>
+              <span style="font-size:12px; color:#A67C52; font-weight:600; display:block;">  العروسان</span>
+              <h1 style="font-family:'Gulzar', serif; font-size:48px; color:#7A5C45; font-weight:400; line-height:1.2;padding-top:10px;">مهند وشهد</h1>
+            </div>
 
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div style="background:#F8F4EE; padding:12px 18px; border-radius:14px; border:1px solid rgba(139,107,82,0.15);">
+                <span style="font-size:11px; color:#8B6B52; display:block;">تاريخ الحفل</span>
+                <strong style="color:#7A5C45; font-size:15px;">الجمعة • ١٨ سبتمبر ٢٠٢٦</strong>
+              </div>
+              <div style="background:#F8F4EE; padding:12px 18px; border-radius:14px; border:1px solid rgba(139,107,82,0.15);">
+                <span style="font-size:11px; color:#8B6B52; display:block;">توقيت الصعود</span>
+                <strong style="color:#7A5C45; font-size:15px;">٧:٠٠ مساءً</strong>
+              </div>
+            </div>
+
+            <div style="background:#F8F4EE; padding:12px 18px; border-radius:14px; border:1px solid rgba(139,107,82,0.15);">
+              <span style="font-size:11px; color:#8B6B52; display:block;">البوابة / مكان الحفل</span>
+              <strong style="color:#7A5C45; font-size:15px;">قاعة لوروا - دار القوات الجوية، صلاح سالم، القاهرة</strong>
+            </div>
+          </div>
+
+          <div style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:16px; border-right:1px dashed rgba(139,107,82,0.2); padding-right:24px;">
+            <span style="font-size:12px; font-family:'Cairo', sans-serif; color:#A67C52; font-weight:700;">دعوة خاصة</span>
+            <p style="font-size:14px; color:#7A5C45; line-height:1.6;">يتشرفان بدعوتكم لحضور حفل زفافهما برفقة عائلتيهما</p>
+
+            <div style="background:#F8F4EE; padding:12px; border-radius:12px; width:100%; border:1px solid rgba(139,107,82,0.15);">
+              <div style="height:36px; background:repeating-linear-gradient(90deg,#7A5C45 0px,#7A5C45 2px,transparent 2px,transparent 4px,#7A5C45 4px,#7A5C45 8px); margin-bottom:4px;"></div>
+              <span style="font-size:10px; font-family:monospace; color:#8B6B52;">*MS2026-0918-LECIEL*</span>
+            </div>
+
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D8%AD%D9%81%D9%84+%D8%B2%D9%81%D8%A7%D9%81+%D9%85%D9%87%D9%86%D8%AF+%D9%88%D8%B4%D9%87%D8%AF&dates=20260918T180000Z/20260918T230000Z&details=%D8%AD%D9%81%D9%84+%D8%B2%D9%81%D8%A7%D9%81+%D9%85%D9%87%D9%86%D8%AF+%D9%88%D8%B4%D9%87%D8%AF+%D9%82%D8%A7%D8%B9%D8%A9+%D9%84%D9%88%D8%B1%D9%88%D8%A7&location=%D8%AF%D8%A7%D8%B1+%D8%A7%D9%84%D9%82%D9%88%D8%A7%D8%AA+%D8%A7%D9%84%D8%AC%D9%88%D9%8A%D8%A9+%D8%B5%D9%84%D8%A7%D8%AD+%D8%B3%D8%A7%D9%84%D9%85" target="_blank" class="btn-primary" style="font-size:13px; padding:12px 20px; width:100%;">
+              📅 إضافة إلى تقويم جوجل
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: BRIDE & GROOM COCKPIT PHOTO -->
+    <section class="inv-section hidden">
+      <div class="card-box">
+        <div class="cockpit-grid">
+          <div class="cockpit-img-frame">
+            <img src="public/assets/brideandgroom.jpeg" alt="مهند وشهد في كابينة الطائرة" />
+            <div style="position:absolute; top:12px; right:12px; background:rgba(0,0,0,0.65); color:#FFF; padding:6px 14px; border-radius:30px; font-size:11px; font-family:'Cairo', sans-serif; border:1px solid rgba(255,255,255,0.2);">
+              ✈ قائد الطائرة: الكابتن مهند والشهد
+            </div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <span style="font-size:12px; color:#A67C52; font-weight:700;">الحب يحلّق في السماء</span>
+            <h2 style="font-size:32px; color:#7A5C45; font-family:'Gulzar', serif; font-weight:600; line-height:1.3;">رحلتنا تبدأ من السحاب</h2>
+            <p style="color:#8B6B52; font-size:16px; line-height:1.8;">
+              "ولد حبنا ليحلق أعلى من الغيم.. شاركونا الانطلاق في أجمل رحلات العمر لنسطر معاً حكاية وفاء لا تنتهي."
+            </p>
+            <div style="background:#F8F4EE; padding:16px; border-radius:16px; border:1px solid rgba(139,107,82,0.12);">
+              <span style="font-size:11px; color:#A67C52; font-weight:700; display:block;">سجل الرحلة</span>
+              <strong style="color:#7A5C45; font-size:15px;">رفقاء العمر • ١٨ سبتمبر ٢٠٢٦</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: COUNTDOWN TIMER -->
+    <section class="inv-section countdown-bg hidden" style="border-radius:28px; padding:50px 20px;">
+      <span style="font-size:12px; color:#A67C52; font-weight:700;">العد التنازلي لإقلاع الحفل</span>
+      <h2 style="font-size:36px; color:#7A5C45; font-family:'Gulzar', serif; margin-top:8px;">العد التنازلي لموعد لقائنا</h2>
+
+      <div class="countdown-grid">
+        <div class="count-box">
+          <span class="count-num" id="days">00</span>
+          <span class="count-label">أيام</span>
+        </div>
+        <div class="count-box">
+          <span class="count-num" id="hours">00</span>
+          <span class="count-label">ساعات</span>
+        </div>
+        <div class="count-box">
+          <span class="count-num" id="minutes">00</span>
+          <span class="count-label">دقائق</span>
+        </div>
+        <div class="count-box">
+          <span class="count-num" id="seconds">00</span>
+          <span class="count-label">ثوانٍ</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: VENUE & GAZEBO -->
+    <section class="inv-section hidden">
+      <div class="card-box" style="text-align:center;">
+        <span style="font-size:12px; color:#A67C52; font-weight:700;">مكان الحفل</span>
+        <h2 style="font-size:36px; color:#7A5C45; font-family:'Gulzar', serif; margin-top:6px;">قاعة لوروا - دار القوات الجوية</h2>
+        <p style="color:#8B6B52; font-size:18px; margin-top:4px;">صلاح سالم - مدينة نصر، القاهرة</p>
+
+        <div class="venue-image-frame">
+          <img  src="public/assets/venue.jpeg" alt="قاعة لوروا - دار القوات الجوية" />
+        </div>
+
+        <a href="https://maps.app.goo.gl/CBNZAj1veYCjQqtFA" target="_blank" class="btn-primary" style="margin-bottom:30px;">
+          📍 فتح الموقع على خرائط جوجل ↗
+        </a>
+
+        <!-- <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(139,107,82,0.15); margin-top:20px;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.4013565795317!2d31.321703600000003!3d30.0826897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f87f5d77679%3A0xfbb12cfa21648a0c!2sAir%20Force%20House!5e0!3m2!1sen!2seg!4v1785575649448!5m2!1sen!2seg" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div> -->
+      </div>
+
+    </section>
+
+    <!-- SECTION 5: FORMAL INVITATION WORDING -->
+    <section class="inv-section hidden">
+      <div class="invitation-box">
+        <h2 style="font-size:36px; color:#7A5C45; font-family:'Gulzar', serif; margin-bottom:24px;">الدعوة</h2>
+        <div style="font-size:20px; color:#7A5C45; font-family:'Gulzar', serif; line-height:2; max-width:700px; margin:0 auto; space-y:12px;">
+          <p>بكل حب وسعادة،</p>
+          <p>يشرفنا دعوتكم لمشاركتنا أجمل لحظات عمرنا.</p>
+          <p>وجودكم بيننا هو أجمل هدية، وحضوركم سيزيد فرحتنا بهجةً وسعادة.</p>
+          <p>في انتظاركم لنحتفل معًا ببداية رحلةٍ جديدة، ونصنع ذكرياتٍ جميلة تبقى في قلوبنا دائمًا.</p>
+        </div>
+        <div class="signature-text" style="font-family:'Gulzar', serif; font-size:46px; margin-top:20px;">مهند وشهد</div>
+      </div>
+    </section>
+<!-- Wedding Plan / Itinerary Section (Arabic) -->
+<section class="inv-section hidden" dir="rtl">
+  <div class="card-box wedding-plan-box">
+    
+    <!-- Section Header -->
+    <div class="plan-header">
+      <span class="plan-sub-title">جدول الرحلة</span>
+      <h2 class="plan-title">مواعيد الحفل</h2>
+      <div class="plan-divider">
         <span></span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.7 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/>
+        </svg>
         <span></span>
-        <span></span>
-
-      </span>
-
+      </div>
     </div>
 
-  </section>
+    <!-- Timeline Container -->
+    <div class="timeline-container">
+      
+      <!-- Event 1 -->
+      <div class="timeline-item">
+        <div class="timeline-time">05:00 م</div>
+        <div class="timeline-badge">
+          <span>🥂</span>
+        </div>
+        <div class="timeline-card">
+          <span class="flight-step">المرحلة الأولى • فتح البوابات</span>
+          <h3 class="event-title">الاستقبال والمشروبات الترحيبية</h3>
+          <p class="event-desc">وصول الضيوف الكرام، تقديم المشروبات الترحيبية، والاستقبال في القاعة.</p>
+        </div>
+      </div>
 
-  <!-- ================= MESSAGE ================= -->
+      <!-- Event 2 -->
+      <div class="timeline-item">
+        <div class="timeline-time">06:00 م</div>
+        <div class="timeline-badge">
+          <span>💍</span>
+        </div>
+        <div class="timeline-card">
+          <span class="flight-step">المرحلة الثانية • الإقلاع</span>
+          <h3 class="event-title">مراسم الزفاف</h3>
+          <p class="event-desc">بدء مراسم الزفاف والاحتفال بالرباط المقدس لـ مهند وشهد.</p>
+        </div>
+      </div>
 
-  <section class="message hidden">
-    <div class="floating-icons message-icons">
+      <!-- Event 3 -->
+      <div class="timeline-item">
+        <div class="timeline-time">07:30 م</div>
+        <div class="timeline-badge">
+          <span>🍽️</span>
+        </div>
+        <div class="timeline-card">
+          <span class="flight-step">المرحلة الثالثة • الضيافة</span>
+          <h3 class="event-title">عشاء الزفاف</h3>
+          <p class="event-desc">تقديم وجبة العشاء الفاخرة المجهزة خصيصاً لضيوفنا الكرام.</p>
+        </div>
+      </div>
 
-      <span style="left:10%; animation-duration:14s;">❀</span>
-      <span style="left:25%; animation-duration:20s;">❤</span>
-      <span style="left:40%; animation-duration:16s;">❀</span>
-      <span style="left:60%; animation-duration:18s;">❤</span>
-      <span style="left:78%; animation-duration:13s;">❀</span>
-      <span style="left:90%; animation-duration:19s;">❤</span>
+      <!-- Event 4 -->
+      <div class="timeline-item">
+        <div class="timeline-time">09:00 م</div>
+        <div class="timeline-badge">
+          <span>🎂</span>
+        </div>
+        <div class="timeline-card">
+          <span class="flight-step">المرحلة الرابعة • الاحتفال</span>
+          <h3 class="event-title">تقطيع الكعكة والرقصة الأولى</h3>
+          <p class="event-desc">لحظات مميزة لتقطيع كعكة الزفاف والرقصة الأولى للعروسين.</p>
+        </div>
+      </div>
 
-    </div>
-
-    <h2 class="h2">الدعوة</h2>
-
-    <div class="message-content">
-
-      بكل حب وسعادة،<br>يشرفنا دعوتكم لمشاركتنا أجمل لحظات عمرنا.<br><br>وجودكم بيننا هو أجمل هدية، وحضوركم سيزيد فرحتنا
-      بهجةً وسعادة.<br><br>في انتظاركم لنحتفل معًا ببداية رحلةٍ جديدة، ونصنع ذكرياتٍ جميلة تبقى في قلوبنا دائمًا.
-
-      <div class="signature">
-        مهند & شهد
+      <!-- Event 5 -->
+      <div class="timeline-item">
+        <div class="timeline-time">10:00 م</div>
+        <div class="timeline-badge">
+          <span>🪩</span>
+        </div>
+        <div class="timeline-card">
+          <span class="flight-step">المرحلة الخامسة • أوج الحفل</span>
+          <h3 class="event-title">الموسيقى والاحتفال</h3>
+          <p class="event-desc">الموسيقى، والرقص، والاحتفال بالحب حتى وقت متأخر من الليل.</p>
+        </div>
       </div>
 
     </div>
+  </div>
+</section>
+    <!-- SECTION 6: RSVP -->
+    <!-- <section class="inv-section hidden">
+      <div class="card-box">
+        <div style="text-align:center; margin-bottom:30px;">
+          <span style="font-size:12px; color:#A67C52; font-weight:700;">تأكيد الحضور</span>
+          <h2 style="font-size:36px; color:#7A5C45; font-family:'Gulzar', serif; margin-top:6px;">تأكيد مقعدك على متن الرحلة (RSVP)</h2>
+        </div>
 
-  </section>
+        <form id="rsvpForm" style="max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:16px;">
+          <div>
+            <label style="display:block; font-size:14px; font-weight:600; color:#7A5C45; margin-bottom:6px;">الاسم الكامل *</label>
+            <input type="text" id="guestName" required placeholder="أدخل اسمك الكريم" class="form-input" />
+          </div>
 
-  <!-- ================= COUNTDOWN SCRIPT ================= -->
+          <div>
+            <label style="display:block; font-size:14px; font-weight:600; color:#7A5C45; margin-bottom:6px;">عدد المرافقين</label>
+            <select id="guestCount" class="form-select">
+              <option value="1">شخص واحد (أنا فقط)</option>
+              <option value="2">مرافقان (أنا + ضيف)</option>
+              <option value="3">٣ أشخاص (أنا + مرافقان)</option>
+            </select>
+          </div>
 
-  <script>
+          <div>
+            <label style="display:block; font-size:14px; font-weight:600; color:#7A5C45; margin-bottom:6px;">تهنئة أو كلمة للعروسين</label>
+            <textarea id="guestMessage" rows="3" placeholder="اكتب تهنئتك القلبية لمهند وشهد..." class="form-textarea"></textarea>
+          </div>
 
-    const weddingDate = new Date("september 18, 2026 19:00:00").getTime();
-    const countdown = setInterval(function () {
+          <button type="submit" class="btn-primary" style="width:100%; margin-top:10px;">
+            ✈ تأكيد حجز الرحلة
+          </button>
+        </form>
 
-      const now = new Date().getTime();
+        <div id="rsvpSuccess" style="display:none; text-align:center; padding:30px; background:rgba(242,193,78,0.15); border-radius:20px; border:1px solid #D4AF37;">
+          <h3 style="font-size:24px; color:#7A5C45;">شكراً لك! 🎉</h3>
+          <p style="color:#8B6B52; font-size:16px; margin-top:8px;">تم تأكيد حضورك بنجاح على متن رحلة MS-2026!</p>
+        </div>
+      </div>
+    </section> -->
 
-      const distance = weddingDate - now;
+    <!-- SECTION 7: WISHES GUESTBOOK -->
+    <!-- <section class="inv-section hidden">
+      <div class="card-box">
+        <div style="text-align:center; margin-bottom:24px;">
+          <span style="font-size:12px; color:#A67C52; font-weight:700;">رسائل وأمنيات الضيوف</span>
+          <h2 style="font-size:36px; color:#7A5C45; font-family:'Gulzar', serif; margin-top:6px;">دفتر التهاني</h2>
+        </div>
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        <form id="wishForm" style="display:grid; grid-template-columns:1fr 2fr auto; gap:12px; margin-bottom:30px;">
+          <input type="text" id="wishAuthor" required placeholder="اسمك الكريم" class="form-input" />
+          <input type="text" id="wishText" required placeholder="اكتب تهنئتك لمهند وشهد..." class="form-input" />
+          <button type="submit" class="btn-primary" style="padding:12px 24px;">إرسال التهنئة</button>
+        </form>
 
-      document.getElementById("days").innerHTML = days;
-      document.getElementById("hours").innerHTML = hours;
-      document.getElementById("minutes").innerHTML = minutes;
-      document.getElementById("seconds").innerHTML = seconds;
+        <div id="wishesList">
+          <div class="card-box" style="background:#F8F4EE; padding:20px; margin-bottom:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <strong style="color:#7A5C45; font-size:16px;">د. أحمد ومنى</strong>
+              <span style="font-size:11px; color:#A67C52;">٥ أغسطس ٢٠٢٦</span>
+            </div>
+            <p style="color:#8B6B52; font-size:14px; line-height:1.6;">"ألف مبروك لأجمل عروسين! ربنا يسعدكم ويديم المحبة والهناء ويبارك في حياتكم القادمة ❤️"</p>
+          </div>
 
-      if (distance < 0) {
-        clearInterval(countdown);
-      }
+          <div class="card-box" style="background:#F8F4EE; padding:20px; margin-bottom:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <strong style="color:#7A5C45; font-size:16px;">كريم والعائلة</strong>
+              <span style="font-size:11px; color:#A67C52;">٥ أغسطس ٢٠٢٦</span>
+            </div>
+            <p style="color:#8B6B52; font-size:14px; line-height:1.6;">"نتمنى لكما رحلة حياة مليئة بالفرح والسعادة والاطمئنان! ألف مبروك مهند وشهد!"</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+  </main>
 
-    }, 1000);
+  <footer style="text-align:center; padding:40px 20px; color:#8B6B52; font-size:13px; border-top:1px solid rgba(139,107,82,0.1); margin-top:60px;">
+    <!-- <p style="font-family:'Gulzar', serif; font-size:28px; color:#7A5C45;">دعوة زفاف مهند وشهد</p> -->
+    <p>© ٢٠٢٦ مهند وشهد • رحلة MS-2026</p>
+  </footer>
 
-  </script>
-  <script>
-
-    const sections = document.querySelectorAll('.hidden');
-
-    const observer = new IntersectionObserver((entries) => {
-
-      entries.forEach((entry) => {
-
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-
-      });
-
-    }, {
-      threshold: 0.2
-    });
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    function changeLanguage() {
-      window.location.href = "main.html";
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>

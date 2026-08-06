@@ -1,0 +1,1184 @@
+/* ==========================================================================
+   Mohanad & Shahd Wedding Invitation - Custom CSS
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cairo:wght@400;600;700&family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Gulzar&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F8F4EE;
+  color: #7A5C45;
+  font-family: 'Cinzel', serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* RTL Override when in Arabic */
+body.rtl, [dir="rtl"] body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* ================= BACKGROUNDS & FLOATING ICONS ================= */
+
+.bg-landing {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(rgba(18, 12, 8, 0.55), rgba(18, 12, 8, 0.65)),
+    url("public/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-icons span {
+  position: absolute;
+  bottom: -60px;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 26px;
+  animation: float 15s linear infinite;
+}
+
+.floating-icons span:nth-child(1) { left: 10%; animation-duration: 12s; }
+.floating-icons span:nth-child(2) { left: 28%; animation-duration: 18s; animation-delay: 2s; }
+.floating-icons span:nth-child(3) { left: 48%; animation-duration: 14s; animation-delay: 4s; }
+.floating-icons span:nth-child(4) { left: 70%; animation-duration: 20s; animation-delay: 1s; }
+.floating-icons span:nth-child(5) { left: 88%; animation-duration: 16s; animation-delay: 3s; }
+
+/* ================= LANGUAGE SWITCHER ================= */
+
+.lang-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 110px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lang-toggle:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.toggle-slider {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 48px;
+  height: 38px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-slider.ar-pos {
+  transform: translateX(52px);
+}
+
+.lang {
+  position: relative;
+  z-index: 2;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  user-select: none;
+}
+
+.lang.active {
+  color: #222;
+}
+
+/* ================= MUSIC TOGGLE ================= */
+
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  background: rgba(122, 92, 69, 0.92);
+  color: #FFF;
+  border: 1px solid rgba(255, 240, 220, 0.3);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.music-toggle:hover {
+  transform: scale(1.05);
+  background: #5E422C;
+}
+
+.equalizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+}
+
+.equalizer span {
+  width: 3px;
+  background: #F2C14E;
+  border-radius: 2px;
+  animation: wave 1.2s ease-in-out infinite;
+}
+
+.equalizer span:nth-child(2) { animation-delay: 0.2s; }
+.equalizer span:nth-child(3) { animation-delay: 0.4s; }
+
+/* ================= CONTAINER & TITLE ================= */
+
+.landing-container {
+  text-align: center;
+  z-index: 2;
+  animation: fadeIn 1.5s ease;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.landing-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(242, 193, 78, 0.2);
+  border: 1px solid rgba(242, 193, 78, 0.4);
+  color: #F2C14E;
+  margin-bottom: 24px;
+}
+
+.landing-title {
+  color: #fff;
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.landing-sub {
+  color: #F5EFE6;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* ================= OPEN BUTTON & PLANE TAKEOFF ================= */
+
+.open-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 280px;
+  height: 68px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.open-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(1.04);
+  border-color: #FFF;
+}
+
+.open-btn svg {
+  width: 42px;
+  height: 32px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.open-btn:hover svg {
+  transform: translateX(4px);
+}
+
+.open-btn.launched {
+  opacity: 0;
+  transform: scale(0.85);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.plane-fly {
+  position: fixed;
+  z-index: 100;
+  width: 440px;
+  height: 150px;
+  pointer-events: none;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+}
+
+/* .plane-fly.flying {
+animation: planeTakeoff 12s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+} */
+
+.cloud-puff {
+  position: fixed;
+  z-index: 98;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.cloud-puff.drift {
+  animation: cloudDrift 2.2s ease-out forwards;
+}
+
+/* ================= INVITATION MAIN LAYOUT ================= */
+
+.header-nav {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(139, 107, 82, 0.2);
+  color: #7A5C45;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: #FFF;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+section.inv-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Boarding Pass Hero */
+.boarding-pass-card {
+  background: #FFFDF9;
+  border-radius: 28px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+.pass-header {
+  background: linear-gradient(135deg, #7A5C45, #A67C52, #7A5C45);
+  color: #FFF;
+  padding: 18px 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pass-body {
+  padding: 36px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .pass-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cockpit Couple Section */
+.card-box {
+  background: #FFFDF9;
+  border-radius: 28px;
+  border: 1px solid rgba(139, 107, 82, 0.12);
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.cockpit-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 850px) {
+  .cockpit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cockpit-img-frame {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 4px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.cockpit-img-frame img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.cockpit-img-frame:hover img {
+  transform: scale(1.04);
+}
+
+/* Countdown Section */
+.countdown-bg {
+  background: #F5EFE6;
+  border-top: 1px solid rgba(139, 107, 82, 0.1);
+  border-bottom: 1px solid rgba(139, 107, 82, 0.1);
+  text-align: center;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 30px auto 0;
+}
+
+@media (max-width: 600px) {
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.count-box {
+  background: #FFFFFF;
+  padding: 28px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(139, 107, 82, 0.12);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
+}
+
+.count-box:hover {
+  transform: translateY(-5px);
+}
+
+.count-num {
+  font-size: 48px;
+  font-weight: 700;
+  color: #A67C52;
+  display: block;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.count-label {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #8B6B52;
+  text-transform: uppercase;
+}
+
+/* Venue Section */
+.venue-image-frame {
+  max-width: 850px;
+  margin: 30px auto;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 2px solid #D4AF37;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.venue-image-frame img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: 50px;
+  background: #7A5C45;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(122, 92, 69, 0.3);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #5E422C;
+  transform: scale(1.04);
+  box-shadow: 0 15px 30px rgba(122, 92, 69, 0.4);
+}
+
+/* Formal Invitation Box */
+.invitation-box {
+  background: #F2E8DC;
+  border-radius: 28px;
+  border: 2px solid rgba(139, 107, 82, 0.18);
+  padding: 50px 30px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+.signature-text {
+  font-family: 'Allura', cursive;
+  font-size: 56px;
+  color: #7A5C45;
+  margin-top: 20px;
+}
+
+/* Form Styles */
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #F8F4EE;
+  border: 1px solid rgba(139, 107, 82, 0.2);
+  color: #7A5C45;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: #A67C52;
+  box-shadow: 0 0 0 3px rgba(166, 124, 82, 0.15);
+}
+
+/* ================= KEYFRAME ANIMATIONS ================= */
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* @keyframes planeTakeoff {
+  0% { transform: translate(0, 0) rotate(0deg) scale(0.5); opacity: 1; }
+  15% { transform: translate(15vw, -5vh) rotate(-5deg) scale(0.7); opacity: 1; }
+  40% { transform: translate(45vw, -15vh) rotate(2deg) scale(1); opacity: 1; }
+  70% { transform: translate(75vw, -10vh) rotate(-3deg) scale(0.8); opacity: 1; }
+  100% { transform: translate(120vw, -25vh) rotate(10deg) scale(0.4); opacity: 0; }
+} */
+
+@keyframes cloudDrift {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  20% { opacity: 0.9; }
+  100% { opacity: 0; transform: translate(-90px, -20px) scale(1.4); }
+}
+
+@keyframes wave {
+  0%, 100% { height: 4px; }
+  50% { height: 16px; }
+}
+
+/* Scroll Observer animations */
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Propeller Spinning Animation */
+/* @keyframes propellerSpin {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(360deg); }
+} */
+
+/* .propeller {
+  transform-origin: 10px 80px;
+  animation: propellerSpin 0.15s linear infinite;
+} */
+
+/* Banner Fluttering Effect */
+/* @keyframes bannerFlutter {
+  0%, 100% { transform: skewY(0deg) translateY(0px); }
+  25% { transform: skewY(1deg) translateY(-2px); }
+  75% { transform: skewY(-1deg) translateY(2px); }
+} */
+
+/* .banner-group {
+  animation: bannerFlutter 0.6s ease-in-out infinite;
+  transform-origin: 400px 90px; 
+} */
+
+/* Add a slight 'wiggle' to the path itself for a fabric look */
+@keyframes fabricWave {
+  0%, 100% { d: path("M390 40 L50 40 Q30 40 30 60 L30 120 Q30 140 50 140 L390 140 L370 90 Z"); }
+  50% { d: path("M390 42 L50 38 Q35 38 35 60 L35 120 Q35 138 50 138 L390 142 L375 92 Z"); }
+}
+
+.flutter-path {
+  animation: fabricWave 0.8s ease-in-out infinite;
+}
+
+
+/* Propeller Spin on the left-side nose */
+@keyframes propellerSpin {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(360deg); }
+}
+.propeller {
+  transform-origin: 0px 80px;
+  animation: propellerSpin 0.1s linear infinite;
+}
+
+/* Banner Fluttering Effect */
+@keyframes bannerFlutter {
+  0%, 100% { transform: skewY(0deg) translateX(0px); }
+  50% { transform: skewY(-1deg) translateX(10px); }
+}
+.banner-group {
+  animation: bannerFlutter 0.7s ease-in-out infinite;
+  transform-origin: 280px 90px;
+}
+
+/* LEFT-SIDE FLIGHT ANIMATION */
+@keyframes planeTakeoffLeft {
+  0% { 
+    transform: translate(0, 0) rotate(0deg) scale(0.6); 
+    opacity: 1; 
+  }
+  20% { 
+    transform: translate(-30vw, -5vh) rotate(5deg) scale(0.85); 
+    opacity: 1; 
+  }
+  60% { 
+    transform: translate(-70vw, -15vh) rotate(-2deg) scale(1.1); 
+    opacity: 1; 
+  }
+  100% { 
+    transform: translate(-140vw, -30vh) rotate(10deg) scale(0.4); 
+    opacity: 0; 
+  }
+}
+
+.plane-fly.flying {
+  animation: planeTakeoffLeft 8s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+/* ==========================================================================
+   Mohanad & Shahd Wedding Invitation - Custom CSS
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cairo:wght@400;600;700&family=Cinzel:wght@400;500;600;700;800&family=Great+Vibes&family=Gulzar&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F8F4EE;
+  color: #7A5C45;
+  font-family: 'Cinzel', serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* RTL Override when in Arabic */
+body.rtl, [dir="rtl"] body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* ================= BACKGROUNDS & FLOATING ICONS ================= */
+
+.bg-landing {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(rgba(18, 12, 8, 0.55), rgba(18, 12, 8, 0.65)),
+    url("public/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-icons span {
+  position: absolute;
+  bottom: -60px;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 26px;
+  animation: float 15s linear infinite;
+}
+
+.floating-icons span:nth-child(1) { left: 10%; animation-duration: 12s; }
+.floating-icons span:nth-child(2) { left: 28%; animation-duration: 18s; animation-delay: 2s; }
+.floating-icons span:nth-child(3) { left: 48%; animation-duration: 14s; animation-delay: 4s; }
+.floating-icons span:nth-child(4) { left: 70%; animation-duration: 20s; animation-delay: 1s; }
+.floating-icons span:nth-child(5) { left: 88%; animation-duration: 16s; animation-delay: 3s; }
+
+/* ================= LANGUAGE SWITCHER ================= */
+
+.lang-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 110px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lang-toggle:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.toggle-slider {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 48px;
+  height: 38px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-slider.ar-pos {
+  transform: translateX(52px);
+}
+
+.lang {
+  position: relative;
+  z-index: 2;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  user-select: none;
+}
+
+.lang.active {
+  color: #222;
+}
+
+/* ================= CONTAINER & TITLE ================= */
+
+.landing-container {
+  text-align: center;
+  z-index: 2;
+  animation: fadeIn 1.5s ease;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.landing-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(242, 193, 78, 0.2);
+  border: 1px solid rgba(242, 193, 78, 0.4);
+  color: #F2C14E;
+  margin-bottom: 24px;
+}
+
+.landing-title {
+  color: #fff;
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.landing-sub {
+  color: #F5EFE6;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* ================= OPEN BUTTON & PLANE TAKEOFF ================= */
+
+.open-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 280px;
+  height: 68px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.open-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(1.04);
+  border-color: #FFF;
+}
+
+.open-btn svg {
+  width: 42px;
+  height: 32px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.open-btn:hover svg {
+  transform: translateX(-4px);
+}
+
+.open-btn.launched {
+  opacity: 0;
+  transform: scale(0.85);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Enlarged Flying Airplane Container */
+.plane-fly {
+  position: fixed;
+  z-index: 100;
+  top: 40%;
+  right: -200px;
+  width: 680px;
+  height: 165px;
+  pointer-events: none;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+}
+
+.plane-fly.flying {
+  animation: planeTakeoffRightToLeft 9s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.cloud-puff {
+  position: fixed;
+  z-index: 98;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.cloud-puff.drift {
+  animation: cloudDrift 2.2s ease-out forwards;
+}
+
+/* Propeller Spinning Animation */
+@keyframes propellerSpin {
+  0% { transform: translate(25px, 95px) rotateY(0deg); }
+  100% { transform: translate(25px, 95px) rotateY(360deg); }
+}
+
+.propeller {
+  animation: propellerSpin 0.12s linear infinite;
+  transform-origin: center;
+}
+
+/* Banner Fluttering Effect */
+@keyframes bannerFlutter {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(-0.5deg); }
+  75% { transform: translateY(3px) rotate(0.5deg); }
+}
+
+.banner-group {
+  animation: bannerFlutter 0.8s ease-in-out infinite;
+  transform-origin: 310px 105px;
+}
+
+/* RIGHT TO LEFT TAKEOFF FLIGHT ANIMATION */
+@keyframes planeTakeoffRightToLeft {
+  0% { 
+    transform: translate(100vw, 0) rotate(0deg) scale(0.7); 
+    opacity: 1; 
+  }
+  20% { 
+    transform: translate(50vw, -4vh) rotate(-3deg) scale(0.9); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: translate(0vw, -10vh) rotate(2deg) scale(1.15); 
+    opacity: 1; 
+  }
+  80% { 
+    transform: translate(-60vw, -18vh) rotate(-2deg) scale(0.95); 
+    opacity: 1; 
+  }
+  100% { 
+    transform: translate(-150vw, -28vh) rotate(6deg) scale(0.5); 
+    opacity: 0; 
+  }
+}
+
+/* ================= KEYFRAME ANIMATIONS ================= */
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cloudDrift {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  20% { opacity: 0.9; }
+  100% { opacity: 0; transform: translate(90px, -20px) scale(1.4); }
+}
+
+/* Scroll Observer animations */
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ==========================================================================
+   Wedding Day Schedule / Flight Itinerary Section
+   ========================================================================== */
+
+.wedding-plan-box {
+  padding: 50px 30px;
+}
+
+/* Header Styles */
+.plan-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.plan-sub-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #A67C52;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.plan-title {
+  font-size: 32px;
+  color: #5E422C;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.plan-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 14px;
+}
+
+.plan-divider span {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+/* Timeline Layout */
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+/* Vertical Gold Timeline Line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 110px;
+  top: 15px;
+  bottom: 15px;
+  width: 2px;
+  background: linear-gradient(180deg, #D4AF37 0%, rgba(212, 175, 55, 0.3) 100%);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Time Badge */
+.timeline-time {
+  width: 75px;
+  padding: 8px 0;
+  background: #7A5C45;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(122, 92, 69, 0.25);
+  flex-shrink: 0;
+}
+
+/* Node Icon */
+.timeline-badge {
+  position: relative;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #FFFDF9;
+  border: 2px solid #D4AF37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 0 0 4px #FFFDF9, 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+  margin-top: -2px;
+}
+
+/* Content Card */
+.timeline-card {
+  flex-grow: 1;
+  background: #F8F4EE;
+  padding: 20px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(139, 107, 82, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.flight-step {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #A67C52;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.event-title {
+  font-size: 18px;
+  color: #5E422C;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.event-desc {
+  font-size: 14px;
+  color: #7A5C45;
+  line-height: 1.5;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 650px) {
+  .timeline-container::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    padding-left: 35px;
+    gap: 12px;
+  }
+
+  .timeline-badge {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .timeline-time {
+    width: auto;
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .timeline-card {
+    width: 100%;
+  }
+}
+
+/* RTL (Arabic) Adjustments */
+body.rtl .timeline-container,
+[dir="rtl"] .timeline-container {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+body.rtl .timeline-container::before,
+[dir="rtl"] .timeline-container::before {
+  left: auto;
+  right: 110px;
+}
+
+@media (max-width: 650px) {
+  body.rtl .timeline-container::before,
+  [dir="rtl"] .timeline-container::before {
+    right: 20px;
+  }
+
+  body.rtl .timeline-item,
+  [dir="rtl"] .timeline-item {
+    padding-left: 0;
+    padding-right: 35px;
+  }
+
+  body.rtl .timeline-badge,
+  [dir="rtl"] .timeline-badge {
+    left: auto;
+    right: 0;
+  }
+}
